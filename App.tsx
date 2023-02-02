@@ -7,9 +7,10 @@ export default function App() {
   // console.log('App1');
 
   React.useEffect(() => {
-    const getPosts = async () => {
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-      setPosts(await res.json());
+    const getPosts = () => {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((res) => res.json())
+        .then(setPosts);
     };
     // console.log('useEffect');
 
